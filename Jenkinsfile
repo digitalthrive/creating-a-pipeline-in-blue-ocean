@@ -13,9 +13,6 @@ pipeline {
       }
     }
     stage('Test') {
-      environment {
-        CI = 'true'
-      }
       steps {
         sh './jenkins/scripts/test.sh'
       }
@@ -30,5 +27,6 @@ pipeline {
   }
   environment {
     npm_config_cache = 'npm-cache'
+    CI = 'true'
   }
 }
