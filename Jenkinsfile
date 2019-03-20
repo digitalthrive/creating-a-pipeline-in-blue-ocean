@@ -26,7 +26,7 @@ pipeline {
     }
     stage('Post') {
       steps {
-        archiveArtifacts 'build/*,static/*'
+        archiveArtifacts 'build/**/*'
       }
     }
   }
