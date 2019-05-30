@@ -27,6 +27,7 @@ pipeline {
     stage('Post') {
       steps {
         archiveArtifacts 'build/**/*'
+        slackSend(channel: '@clay', color: 'good', message: 'Build finished', tokenCredentialId: 'slack-token', teamDomain: 'warren-douglas.slack.com')
       }
     }
   }
